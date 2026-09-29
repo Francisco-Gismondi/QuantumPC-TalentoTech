@@ -1,0 +1,74 @@
+[
+  {
+    "id": 1,
+    "name": "Apple MacBook Air M2 13.6\"",
+    "description": "Portátil ultraligera de Apple con el chip M2, CPU de 8 núcleos y GPU de 8 núcleos. Incluye 8GB de memoria unificada y 256GB de almacenamiento SSD. Pantalla Liquid Retina.",
+    "price": 1500000,
+    "image": "/img/computers/macbook-air-m2.jpg",
+    "category": "notebook"
+  },
+  {
+    "id": 2,
+    "name": "Dell XPS 13 Plus",
+    "description": "Notebook premium con diseño futurista, touchpad invisible y teclado de borde a borde. Procesador Intel Core i7-1360P, 16GB de RAM LPDDR5 y 512GB SSD NVMe.",
+    "price": 2200000,
+    "image": "/img/computers/dell-xps-13-plus.jpg",
+    "category": "notebook"
+  },
+  {
+    "id": 3,
+    "name": "ASUS ROG Zephyrus G14",
+    "description": "Potencia gamer en formato ultracompacto de 14 pulgadas. Equipada con AMD Ryzen 9 7940HS, NVIDIA GeForce RTX 4060, 16GB de RAM y pantalla Nebula Display de 165Hz.",
+    "price": 2800000,
+    "image": "/img/computers/asus-rog-zephyrus-g14.jpg",
+    "category": "gamer"
+  },
+  {
+    "id": 4,
+    "name": "Lenovo ThinkPad X1 Carbon Gen 11",
+    "description": "La laptop empresarial definitiva, construida con fibra de carbono. Cuenta con Intel Core i7 vPro de 13va generación, 16GB de RAM, 1TB SSD y seguridad biométrica avanzada.",
+    "price": 2500000,
+    "image": "/img/computers/lenovo-thinkpad-x1.jpg",
+    "category": "notebook"
+  },
+  {
+    "id": 5,
+    "name": "Apple MacBook Pro 16\" (M3 Pro)",
+    "description": "Estación de trabajo portátil para profesionales creativos. Chip M3 Pro de 12 núcleos, GPU de 18 núcleos, 18GB de memoria unificada y pantalla Liquid Retina XDR de 16.2 pulgadas.",
+    "price": 4200000,
+    "image": "/img/computers/macbook-pro-16-m3.jpg",
+    "category": "notebook"
+  },
+  {
+    "id": 6,
+    "name": "Alienware m16 R1",
+    "description": "Laptop de alto rendimiento para e-sports y juegos AAA. Procesador Intel Core i9-13900HX, gráfica NVIDIA RTX 4080 de 12GB, 32GB de RAM DDR5 y refrigeración Cryo-tech.",
+    "price": 4500000,
+    "image": "/img/computers/alienware-m16.jpg",
+    "category": "gamer"
+  },
+  {
+    "id": 7,
+    "name": "HP Spectre x360 14",
+    "description": "Computadora convertible 2 en 1 con pantalla táctil OLED. Chasis de aluminio CNC, procesador Intel Core i7 de 13va generación, 16GB RAM y lápiz óptico incluido.",
+    "price": 2100000,
+    "image": "/img/computers/hp-spectre-x360.jpg",
+    "category": "notebook"
+  },
+  {
+    "id": 8,
+    "name": "Apple iMac 24\" (M3)",
+    "description": "Computadora de escritorio All-in-One con diseño ultradelgado en varios colores. Chip M3 de Apple, pantalla Retina 4.5K, cámara FaceTime HD a 1080p y sistema de seis parlantes.",
+    "price": 2400000,
+    "image": "/img/computers/apple-imac-m3.jpg",
+    "category": "desktop"
+  },
+  {
+    "id": 9,
+    "name": "Razer Blade 15",
+    "description": "Laptop gamer de diseño minimalista y cuerpo de aluminio fresado. Integra Intel Core i7-13800H, NVIDIA RTX 4070, 16GB RAM y pantalla QHD a 240Hz para máxima fluidez.",
+    "price": 3800000,
+    "image": "/img/computers/razer-blade-15.jpg",
+    "category": "gamer"
+  }
+]

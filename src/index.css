@@ -1,0 +1,147 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --bg: #0a0014;
+  --surface: #110022;
+  --card: #1a0033;
+  --border: #2a004d;
+
+  --text: #ffffff;
+  --text-secondary: #a89fbb;
+  --disabled: #5c5470;
+
+  --primary: #f72585;
+  --primary-hover: #ff479d;
+  --secondary: #fb5607;
+
+  --success: #39ff14;
+  --danger: #ff003c;
+
+  --font-display: "Rajdhani", sans-serif;
+  --font-body: "Inter", sans-serif;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-body);
+}
+
+h1,
+h2,
+h3,
+.btn-primary,
+.badge {
+  font-family: var(--font-display);
+  letter-spacing: 1px;
+}
+
+h1,
+.btn-primary {
+  text-transform: uppercase;
+}
+
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
+  width: min(1200px, 90%);
+  margin: 2rem auto;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  font-family: var(--font-display);
+}
+
+.primary {
+  color: var(--text);
+}
+
+.secondary {
+  color: var(--text-secondary);
+}
+
+.disabled {
+  color: var(--disabled);
+}
+
+.bg-primary {
+  background: var(--primary);
+}
+
+.bg-success {
+  background: var(--success);
+}
+
+.bg-delete {
+  background: var(--danger);
+}
+
+.btn {
+  border: none;
+  border-radius: 8px;
+  padding: 0.7rem 1.3rem;
+  cursor: pointer;
+  font: inherit;
+  color: #000000;
+  transition: 0.25s;
+  font-family: var(--font-display);
+}
+
+.btn-primary {
+  color: var(--text);
+  background: linear-gradient(135deg, #f72585 0%, #fb5607 100%);
+  clip-path: polygon(10px 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%, 0 10px);
+  cursor: pointer;
+}
+
+.bg-success,
+.bg-delete {
+  color: white;
+}
+
+.bg-primary:hover {
+  background: var(--primary-hover);
+}
+
+.bg-success:hover {
+  filter: brightness(0.9);
+}
+
+.bg-delete:hover {
+  filter: brightness(0.9);
+}
+
+.btn:disabled {
+  background: var(--disabled);
+  color: var(--text-secondary);
+  cursor: not-allowed;
+  filter: none;
+}

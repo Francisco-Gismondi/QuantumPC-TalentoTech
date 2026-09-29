@@ -1,0 +1,37 @@
+header {
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+
+  padding: 1rem 3rem;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo-container a {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.logo-container img {
+  width: 70px;
+}
+
+.logo-container span {
+  font-size: 1.7rem;
+  font-weight: bold;
+  color: var(--text);
+}
+
+header a {
+  font-size: 1.5rem;
+  color: var(--text);
+  font-weight: 500;
+  transition: 0.25s;
+}
+
+header a:hover {
+  color: var(--primary);
+}
