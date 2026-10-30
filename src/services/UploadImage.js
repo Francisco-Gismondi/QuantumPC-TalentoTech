@@ -1,4 +1,4 @@
-const IMGBB_API_KEY = import.meta.env.VITE_IMGBB_API_KEY;
+const IMGBB_API_KEY = "d7e3281c2a4a9b0e0061e2eca403b1e3";
 const ENDPOINT = "https://api.imgbb.com/1/upload";
 
 export const uploadImage = async (file) => {
