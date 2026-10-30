@@ -5,7 +5,7 @@ import "./Header.css";
 
 export const Header = () => {
   return (
-    <header>
+    <header className="glass glass-nav">
       <div className="logo-container">
         <Link to={"/"}>
           <img src={logo} alt="logo quantum" />

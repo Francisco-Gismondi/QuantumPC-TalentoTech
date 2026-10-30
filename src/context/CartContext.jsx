@@ -1,5 +1,6 @@
 import { createContext, useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { notify } from "../utils/Notifications";
 
 const CartContext = createContext();
 
@@ -16,28 +17,30 @@ export const CartProvider = ({ children }) => {
   const navigate = useNavigate();
   const [cart, setCart] = useState([]);
 
-  const isInCart = (item) => {
-    const inCart = cart.some((element) => element.id === item.id);
-    return inCart;
-  };
-
   const addItem = (item) => {
-    if (isInCart(item)) {
-      alert("El producto ya existe en el carrito");
-      return;
-    }
-    //Forma funcional "prev"
-    //setCart(prev => [...prev, item])
-    setCart([...cart, item]);
+    setCart((currentCart) => {
+      const existingItem = currentCart.find((element) => element.id === item.id);
+
+      if (existingItem) {
+        return currentCart.map((element) => (element.id === item.id ? { ...element, quantity: (element.quantity ?? 1) + 1 } : element));
+      }
+
+      return [...currentCart, { ...item, quantity: 1 }];
+    });
   };
 
   const removeItem = (id) => {
-    const updatedCart = cart.filter((element) => element.id !== id);
-    setCart(updatedCart);
-    alert("Producto eliminado ✅");
+    setCart((currentCart) => {
+      const existingItem = currentCart.find((element) => element.id === id);
+      if (existingItem) {
+        return currentCart.map((element) => (element.id === id ? { ...element, quantity: Math.max(0, (element.quantity ?? 1) - 1) } : element));
+      }
+      return currentCart;
+    });
+  };
 
-    //Forma funcional "prev"
-    //setCart((prev) => prev.filter((element) => element.id !== id));
+  const deleteItem = (id) => {
+    setCart((currentCart) => currentCart.filter((element) => element.id !== id));
   };
 
   const clearCart = () => {
@@ -45,15 +48,15 @@ export const CartProvider = ({ children }) => {
   };
 
   const getTotalItems = () => {
-    return cart.length;
+    return cart.reduce((total, element) => total + (element.quantity ?? 1), 0);
   };
 
   const getCartTotal = () => {
-    return cart.reduce((acc, element) => acc + element.price, 0);
+    return cart.reduce((total, element) => total + element.price * (element.quantity ?? 1), 0);
   };
 
   const checkout = () => {
-    alert("Su compra ha sido realizada 🎉");
+    notify.success("Su compra ha sido realizada con éxito");
     clearCart();
     navigate("/");
   };
@@ -61,6 +64,7 @@ export const CartProvider = ({ children }) => {
   const values = {
     cart,
     addItem,
+    deleteItem,
     clearCart,
     removeItem,
     getCartTotal,

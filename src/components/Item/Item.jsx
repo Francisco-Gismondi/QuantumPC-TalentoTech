@@ -2,7 +2,7 @@ import "./Item.css";
 
 export const Item = ({ image, name, description, price, children }) => {
   return (
-    <article className="card">
+    <article className="card glass glass-card glass-interactive">
       <img src={image} />
       <h3>{name}</h3>
       <p>{description}</p>

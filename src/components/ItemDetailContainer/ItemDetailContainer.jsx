@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { ItemDetail } from "../ItemDetail/ItemDetail";
+import { getProductById } from "../../services/ProductsService";
 
 export const ItemDetailContainer = () => {
   const { id } = useParams();
@@ -13,21 +14,20 @@ export const ItemDetailContainer = () => {
     setLoading(true);
     setError(null);
 
-    fetch("/data/products.json")
-      .then((res) => res.json())
-      .then((data) => {
-        const item = data.find((product) => String(product.id) === id);
-        if (item) {
-          setItemDetail(item);
-          return;
-        }
-        throw new Error("Elemento no encontrado");
-      })
+    getProductById(id)
+      .then((data) => setItemDetail(data))
       .catch((error) => setError(error.message))
       .finally(() => setLoading(false));
   }, [id]);
 
-  if (loading) return <p>Cargando...</p>;
+  if (loading)
+    return (
+      <div class="loader-container">
+        <div class="spinner">
+          <div class="spinner1"></div>
+        </div>
+      </div>
+    );
   if (error) return <p>{error}</p>;
   if (!itemDetail) return <p>Producto no encontrado</p>;
 

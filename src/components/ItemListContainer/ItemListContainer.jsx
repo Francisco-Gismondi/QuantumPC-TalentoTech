@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { ItemList } from "../ItemList/ItemList";
+import { getProducts } from "../../services/ProductsService";
 
 export const ItemListContainer = () => {
   const { category } = useParams();
@@ -9,24 +10,24 @@ export const ItemListContainer = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch("/data/products.json")
-      .then((res) => {
-        if (!res.ok) {
-          throw new Error("Error al cargar los productos");
-        }
-
-        return res.json();
-      })
+    getProducts()
       .then((data) => setProducts(data))
       .catch((error) => setErrors(error.message))
       .finally(() => setLoading(false));
   }, []);
 
-  if (loading) return <p>Cargando...</p>;
+  if (loading)
+    return (
+      <div class="loader-container">
+        <div class="spinner">
+          <div class="spinner1"></div>
+        </div>
+      </div>
+    );
   if (errors) return <p>{errors}</p>;
 
   const filteredProducts = category
-    ? products.filter((product) => product.category === category)
+    ? products.filter((product) => product.category?.trim().toLocaleLowerCase("es") === decodeURIComponent(category).trim().toLocaleLowerCase("es"))
     : products;
 
   return (

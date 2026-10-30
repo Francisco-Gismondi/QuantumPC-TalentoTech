@@ -4,22 +4,20 @@
   display: flex;
   flex-direction: column;
 
-  background: var(--card);
-  border: 1px solid var(--border);
-  border-radius: 5px;
+  border-radius: 20px;
   overflow: hidden;
 
-  transition: 0.25s;
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.18);
   font-family: var(--font-body);
 }
 
-.card:hover {
-  transform: translateY(-4px);
-  border-color: var(--primary);
+.card:hover,
+.card:focus-within {
+  border-color: var(--glass-edge-bright);
   box-shadow:
-    0 10px 22px rgba(0, 0, 0, 0.25),
-    0 0 24px 4px var(--primary-glow, rgba(255, 71, 157, 0.35));
+    inset 0 1px 0 var(--glass-highlight),
+    inset 0 -1px 0 color-mix(in srgb, var(--primary) 12%, transparent),
+    0 20px 42px var(--glass-shadow),
+    0 0 24px color-mix(in srgb, var(--primary) 18%, transparent);
 }
 
 .card img {
