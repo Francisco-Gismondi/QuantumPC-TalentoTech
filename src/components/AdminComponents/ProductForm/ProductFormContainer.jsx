@@ -58,11 +58,9 @@ export const ProductFormContainer = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    //modificamos los estados para el "loading mientras se procesa"
     setErrors({});
     setLoading(true);
 
-    //validar inputs
     const newErrors = validateProduct({ ...product, file: file || existingImage });
     if (Object.keys(newErrors).length > 0) {
       setErrors(newErrors);
